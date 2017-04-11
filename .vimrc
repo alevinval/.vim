@@ -38,6 +38,8 @@ set backspace=2 "
 set cursorline
 set synmaxcol=120
 set laststatus=2
+set expandtab
+set tabstop=4
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep=' '
