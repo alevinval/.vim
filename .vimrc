@@ -52,4 +52,7 @@ au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softt
 map q :q
 map <Tab> tabnext
 
+command FixTrailingWhitespace %s/\s\+$//e
+command FixIndent gg=G
+
 colorscheme delek
