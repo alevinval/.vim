@@ -29,8 +29,8 @@ set wildmenu
 set hls
 set clipboard=unnamedplus
 set directory-=.
+set listchars=eol:$,trail:_,extends:>,precedes:<,nbsp:~
 set list
-set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set scrolloff=5
 set backspace=2 "
 set cursorline
