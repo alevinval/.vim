@@ -50,7 +50,7 @@ au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
 map q :q
-map <Tab> tabnext
+map <Tab> :bn
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent gg=G
