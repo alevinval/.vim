@@ -14,14 +14,16 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dyng/ctrlsf.vim'
 
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 
+set grepprg=ag\ --nogroup\ --nocolor
 set backspace=2 "
-set clipboard=unnamedplus
+set clipboard=unnamed
 set cursorline
 set directory-=.
 set expandtab
@@ -59,6 +61,7 @@ map <Up> <nop>
 map <Down> <nop>
 map <Left> <nop>
 map <Right> <nop>
+map <C-S-f> :CtrlSF
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent gg=G
