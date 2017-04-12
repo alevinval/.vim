@@ -19,27 +19,27 @@ call vundle#end()
 syntax on
 filetype plugin indent on
 
-set updatetime=250
-set hidden
-set ignorecase
-set smartcase
-set incsearch
-set number
-set showmatch
-set showcmd
-set wildmenu
-set hls
-set clipboard=unnamedplus
-set directory-=.
-set listchars=tab:▸\ ,eol:▫
-set list
-set scrolloff=5
 set backspace=2 "
+set clipboard=unnamedplus
 set cursorline
-set synmaxcol=120
-set laststatus=2
+set directory-=.
 set expandtab
+set hidden
+set hls
+set ignorecase
+set incsearch
+set laststatus=2
+set list
+set listchars=tab:▸\ ,trail:▫
+set number
+set scrolloff=5
+set showcmd
+set showmatch
+set smartcase
+set synmaxcol=250
 set tabstop=4
+set updatetime=250
+set wildmenu
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep=' '
@@ -52,7 +52,12 @@ au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
 map q :q
-map <Tab> :bn
+map <Tab> :bn<CR>
+map <C-c> :bd<CR>
+map <Up> <nop>
+map <Down> <nop>
+map <Left> <nop>
+map <Right> <nop>
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent gg=G
