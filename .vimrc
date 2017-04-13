@@ -54,6 +54,9 @@ let g:airline#extensions#branch#enabled=1
 au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
+let mapleader = "\<Space>"
+map <leader>b oimport ipdb; ipdb.set_trace()<esc>
+
 map q :q
 map <Tab> :bn<CR>
 map <C-c> :bd<CR>
