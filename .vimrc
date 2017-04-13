@@ -56,16 +56,16 @@ au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
 let mapleader = "\<Space>"
-map <leader>b oimport ipdb; ipdb.set_trace()<esc>
+noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
+noremap <leader>f viw:<C-U>CtrlSF<CR>
 
-map q :q
-map <Tab> :bn<CR>
-map <C-c> :bd<CR>
-map <Up> <nop>
-map <Down> <nop>
-map <Left> <nop>
-map <Right> <nop>
-map <C-S-f> :CtrlSF
+noremap q :q
+noremap <Tab> :bn<CR>
+noremap <C-c> :bd<CR>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent gg=G
