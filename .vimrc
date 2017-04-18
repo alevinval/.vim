@@ -57,19 +57,21 @@ let g:airline#extensions#branch#enabled=1
 au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
-let mapleader = "\<Space>"
-noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
-noremap <leader>f viw:<C-U>CtrlSF<CR>
-
-noremap q :q
-noremap <Tab> :bn<CR>
-noremap <C-c> :bd<CR>
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 command FixTrailingWhitespace %s/\s\+$//e
-command FixIndent gg=G
+command FixIndent normal! mzgg=G`z
+
+let mapleader = "\<Space>"
+nnoremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
+nnoremap <leader>f viw:<C-U>CtrlSF<CR>
+nnoremap <leader>l :FixIndent<CR>:FixTrailingWhitespace<CR>
+
+nnoremap q :q
+nnoremap qq :q<CR>
+nnoremap <Tab> :bn<CR>
+nnoremap <C-c> :bd<CR>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
 
 colorscheme delek
