@@ -60,6 +60,8 @@ au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
 au Filetype go nnoremap ga :GoAlternate<CR>
+au Filetype go nnoremap gt :GoTest<CR>
+au FileType go nnoremap gc :GoCoverage<CR>
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent normal! mzgg=G`z
