@@ -54,8 +54,12 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
 
+let g:go_fmt_command = "goimports"
+
 au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
+
+au Filetype go nnoremap ga :GoAlternate<CR>
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent normal! mzgg=G`z
@@ -64,6 +68,7 @@ let mapleader = "\<Space>"
 nnoremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>l :FixIndent<CR>:FixTrailingWhitespace<CR>
+nnoremap <leader>w :w<CR>
 
 nnoremap q :q
 nnoremap qq :q<CR>
