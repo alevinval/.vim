@@ -44,6 +44,8 @@ set synmaxcol=250
 set tabstop=4
 set updatetime=250
 set wildmenu
+set wildignore+=tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep=' '
