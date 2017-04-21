@@ -59,14 +59,15 @@ let g:go_fmt_command = "goimports"
 au BufNewFile,BufRead *.php set filetype=php
 au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
 
-au Filetype go nnoremap ga :GoAlternate<CR>
-au Filetype go nnoremap gt :GoTest<CR>
-au FileType go nnoremap gc :GoCoverage<CR>
-
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent normal! mzgg=G`z
 
 let mapleader = "\<Space>"
+
+au Filetype go nnoremap <leader>ga :GoAlternate<CR>
+au Filetype go nnoremap <leader>gt :GoTest<CR>
+au FileType go nnoremap <leader>gc :GoCoverage<CR>
+
 nnoremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>l :FixIndent<CR>:FixTrailingWhitespace<CR>
