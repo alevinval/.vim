@@ -74,6 +74,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
 nnoremap <Tab> :bn<CR>
+nnoremap <leader><Tab> :bp<CR>
 nnoremap <C-c> :bd<CR>
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
