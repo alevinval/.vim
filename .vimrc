@@ -22,12 +22,12 @@ call vundle#end()
 syntax on
 filetype plugin indent on
 
-set grepprg=ag\ --nogroup\ --nocolor
 set backspace=2 "
 set clipboard=unnamed
 set cursorline
 set directory-=.
 set expandtab
+set grepprg=ag\ --nogroup\ --nocolor
 set hidden
 set hls
 set ignorecase
@@ -35,6 +35,7 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:▫
+set noswapfile
 set number
 set scrolloff=5
 set showcmd
@@ -43,9 +44,9 @@ set smartcase
 set synmaxcol=128
 set tabstop=4
 set updatetime=250
-set wildmenu
-set wildignore+=tmp/*,*.so,*.swp,*.zip
 set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
+set wildignore+=tmp/*,*.so,*.swp,*.zip
+set wildmenu
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep=' '
