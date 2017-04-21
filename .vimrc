@@ -40,7 +40,7 @@ set scrolloff=5
 set showcmd
 set showmatch
 set smartcase
-set synmaxcol=250
+set synmaxcol=128
 set tabstop=4
 set updatetime=250
 set wildmenu
@@ -56,9 +56,6 @@ let g:airline#extensions#branch#enabled=1
 
 let g:go_fmt_command = "goimports"
 
-au BufNewFile,BufRead *.php set filetype=php
-au BufRead,BufNewFile *.php,*.py setlocal tabstop=4 shiftwidth=4 expandtab softtabstop=4
-
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent normal! mzgg=G`z
 
@@ -68,13 +65,14 @@ au Filetype go nnoremap <leader>ga :GoAlternate<CR>
 au Filetype go nnoremap <leader>gt :GoTest<CR>
 au FileType go nnoremap <leader>gc :GoCoverage<CR>
 
-nnoremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
-nnoremap <leader>f viw:<C-U>CtrlSF<CR>
-nnoremap <leader>l :FixIndent<CR>:FixTrailingWhitespace<CR>
-nnoremap <leader>w :w<CR>
+au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
-nnoremap q :q
-nnoremap qq :q<CR>
+nnoremap <leader>f viw:<C-U>CtrlSF<CR>
+nnoremap <leader>ll :FixTrailingWhitespace<CR>
+nnoremap <leader>li :FixIndent<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
 nnoremap <Tab> :bn<CR>
 nnoremap <C-c> :bd<CR>
 nnoremap <Up> <nop>
