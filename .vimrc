@@ -24,7 +24,6 @@ filetype plugin indent on
 
 set backspace=2 "
 set clipboard=unnamed
-set cursorline
 set directory-=.
 set expandtab
 set grepprg=ag\ --nogroup\ --nocolor
