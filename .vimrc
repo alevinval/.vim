@@ -73,7 +73,7 @@ au Filetype go nnoremap <leader>gt :GoTest<CR>
 au FileType go nnoremap <leader>gc :GoCoverage<CR>
 
 au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
-autocmd BufWritePost *.py call Flake8()
+au BufWritePost *.py call Flake8()
 
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>ll :FixTrailingWhitespace<CR>
