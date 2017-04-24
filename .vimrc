@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'fatih/vim-go'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
@@ -54,6 +55,12 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
 
+" Make CtrlP fast again.
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 let g:go_fmt_command = "goimports"
 
 command FixTrailingWhitespace %s/\s\+$//e
@@ -66,6 +73,7 @@ au Filetype go nnoremap <leader>gt :GoTest<CR>
 au FileType go nnoremap <leader>gc :GoCoverage<CR>
 
 au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
+autocmd BufWritePost *.py call Flake8()
 
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>ll :FixTrailingWhitespace<CR>
