@@ -17,6 +17,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'fatih/vim-go'
 Plugin 'nvie/vim-flake8'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
