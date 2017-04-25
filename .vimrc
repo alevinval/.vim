@@ -56,10 +56,9 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
 
-" Make CtrlP fast again.
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore .git -g ""'
 endif
 
 let g:go_fmt_command = "goimports"
