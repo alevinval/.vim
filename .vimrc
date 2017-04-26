@@ -12,7 +12,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'fatih/vim-go'
@@ -24,8 +23,11 @@ call vundle#end()
 syntax on
 filetype plugin indent on
 
+set autoread
+set autoindent
 set backspace=2 "
 set clipboard=unnamed
+set display+=lastline
 set directory-=.
 set expandtab
 set grepprg=ag\ --nogroup\ --nocolor
@@ -42,6 +44,7 @@ set scrolloff=5
 set showcmd
 set showmatch
 set smartcase
+set smarttab
 set synmaxcol=128
 set tabstop=4
 set updatetime=250
@@ -49,11 +52,11 @@ set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
 set wildignore+=tmp/*,*.so,*.swp,*.zip
 set wildmenu
 
+let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep=' '
-let g:airline#extensions#tabline#left_alt_sep='|'
+let g:airline#extensions#tabline#left_sep=''
+let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
