@@ -47,6 +47,7 @@ set smartcase
 set smarttab
 set synmaxcol=128
 set tabstop=4
+set shiftwidth=4
 set updatetime=250
 set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
 set wildignore+=tmp/*,*.so,*.swp,*.zip
