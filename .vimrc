@@ -8,27 +8,29 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'fatih/vim-go'
+Plugin 'mxw/vim-jsx'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'fatih/vim-go'
-Plugin 'nvie/vim-flake8'
-Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 
-set autoread
 set autoindent
+set autoread
 set backspace=2 "
 set clipboard=unnamed
-set display+=lastline
 set directory-=.
+set display+=lastline
 set expandtab
 set grepprg=ag\ --nogroup\ --nocolor
 set hidden
@@ -38,16 +40,17 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:▫
+set mouse=a
 set noswapfile
 set number
 set scrolloff=5
+set shiftwidth=4
 set showcmd
 set showmatch
 set smartcase
 set smarttab
 set synmaxcol=128
 set tabstop=4
-set shiftwidth=4
 set updatetime=250
 set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
 set wildignore+=tmp/*,*.so,*.swp,*.zip
