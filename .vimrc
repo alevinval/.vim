@@ -13,12 +13,12 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'mxw/vim-jsx'
-Plugin 'nvie/vim-flake8'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -56,12 +56,14 @@ set wildignore+=*/node_modules/*,*/.git/*,*/.idea/*,*/vendor
 set wildignore+=tmp/*,*.so,*.swp,*.zip
 set wildmenu
 
-let g:airline_theme='dark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep=''
-let g:airline#extensions#tabline#left_alt_sep=''
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled=1
 let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_alt_sep=''
+let g:airline#extensions#tabline#left_sep=''
+let g:airline_theme='dark'
+
+let g:ale_lint_on_save=1
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -80,7 +82,6 @@ au Filetype go nnoremap <leader>gt :GoTest<CR>
 au FileType go nnoremap <leader>gc :GoCoverage<CR>
 
 au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
-au BufWritePost *.py call Flake8()
 
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>ll :FixTrailingWhitespace<CR>
