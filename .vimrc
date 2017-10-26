@@ -83,6 +83,8 @@ au FileType go nnoremap <leader>gc :GoCoverage<CR>
 
 au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 nnoremap <leader>f viw:<C-U>CtrlSF<CR>
 nnoremap <leader>ll :FixTrailingWhitespace<CR>
 nnoremap <leader>li :FixIndent<CR>
