@@ -1,4 +1,8 @@
+# My VIM Configuration
+
+## Installation
+
 ```bash
-git clone git@github.com:/alevinval/.vim.git ~/.vim
-.~/.vim/install.sh
+git clone git@github.com:/alevinval/vim.git ~/vim
+sh ~/vim/install.sh
 ```
