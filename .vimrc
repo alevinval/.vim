@@ -6,7 +6,6 @@ syntax off
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf'
