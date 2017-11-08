@@ -8,10 +8,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dyng/ctrlsf.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-commentary'
@@ -65,9 +66,8 @@ let g:airline_theme='dark'
 
 let g:ale_lint_on_save=1
 
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore .git -g ""'
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 let g:go_fmt_command = "goimports"
@@ -85,7 +85,9 @@ au FileType python noremap <leader>b oimport ipdb; ipdb.set_trace()<esc>
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-nnoremap <leader>f viw:<C-U>CtrlSF<CR>
+nnoremap <leader>a :Ack!<Space>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>ll :FixTrailingWhitespace<CR>
 nnoremap <leader>li :FixIndent<CR>
 nnoremap <leader>w :w<CR>
