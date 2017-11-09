@@ -100,3 +100,5 @@ nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
 colorscheme delek
+
+let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore .git --hidden'
