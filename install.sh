@@ -1,11 +1,10 @@
-LINE="source ~/vim/.vimrc"
-if ! ag "$LINE" ~/.vimrc; then
-    echo $LINE > ~/.vimrc
+echo "Ensuring configuration is sourced from .vimrc"
+LINE="source ~/vim/vimrc"
+if ! grep "$LINE" ~/.vimrc &> /dev/null ; then
+    echo "Adding sourcing of custom vimrc file"
+    echo $LINE >> ~/.vimrc
 fi
 
-if ! which flake8; then
-    pip install flake8
-fi
-
+echo "Downloading Plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

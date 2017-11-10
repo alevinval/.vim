@@ -66,6 +66,7 @@ let g:ale_lint_on_save=1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore .git --hidden'
 endif
 
 let g:go_fmt_command = "goimports"
@@ -100,5 +101,3 @@ nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
 colorscheme delek
-
-let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore .git --hidden'
