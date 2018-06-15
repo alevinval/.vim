@@ -4,6 +4,12 @@ set nocompatible
 filetype plugin indent off
 syntax off
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
@@ -11,8 +17,8 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 Plug 'rakr/vim-one'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -57,6 +63,7 @@ set wildignore+=tmp/*,*.so,*.swp,*.zip
 set wildmenu
 set completeopt=longest,menuone
 
+" Airline configuration
 let g:airline#extensions#ale#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#tabline#enabled = 1
@@ -64,6 +71,7 @@ let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#left_sep=''
 let g:airline_theme='one'
 
+" ALE configuration
 let g:ale_lint_on_save=1
 
 if executable('ag')
@@ -71,7 +79,11 @@ if executable('ag')
   let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore .git --hidden'
 endif
 
+" Go configuration
 let g:go_fmt_command = "goimports"
+
+" Vue configuration
+let g:vue_disable_pre_processors=1
 
 command FixTrailingWhitespace %s/\s\+$//e
 command FixIndent normal! mzgg=G`z
