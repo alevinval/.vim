@@ -12,6 +12,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'Valloric/YouCompleteMe'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf'
