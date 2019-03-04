@@ -114,6 +114,7 @@ nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
+inoremap § <Esc>
 
 if (empty($TMUX))
   if (has("nvim"))
